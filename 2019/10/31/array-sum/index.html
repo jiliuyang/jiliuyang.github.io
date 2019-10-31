@@ -7,18 +7,18 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>arraySummary - 墨韵</title>
+<title>ES6常见数组处理方法分析汇总 - 墨韵</title>
 
 
-    <meta name="description" content="title: ES6常见数组处理方法分析汇总date: 2019-10-31 10:59:34tags:categories: ES6  事先给出一个以下方法要遍历的数组对象： 1234567const arr = [  &amp;#123;name:&amp;quot;黄药师&amp;quot;,alias:&amp;quot;东邪&amp;quot;,age:66&amp;#125;,  &amp;#123;name:&amp;quot;欧阳锋&amp;quot">
+    <meta name="description" content="事先给出一个以下方法要遍历的数组对象： 1234567const arr = [  &amp;#123;name:&amp;quot;黄药师&amp;quot;,alias:&amp;quot;东邪&amp;quot;,age:66&amp;#125;,  &amp;#123;name:&amp;quot;欧阳锋&amp;quot;,alias:&amp;quot;西毒&amp;quot;,age:66&amp;#125;,  &amp;#123;name:&amp;quot;段皇爷&amp;quot;,alias">
 <meta property="og:type" content="article">
-<meta property="og:title" content="arraySummary">
-<meta property="og:url" content="http:&#x2F;&#x2F;inkrhyme.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;arraySummary&#x2F;index.html">
+<meta property="og:title" content="ES6常见数组处理方法分析汇总">
+<meta property="og:url" content="http:&#x2F;&#x2F;inkrhyme.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;array-sum&#x2F;index.html">
 <meta property="og:site_name" content="墨韵">
-<meta property="og:description" content="title: ES6常见数组处理方法分析汇总date: 2019-10-31 10:59:34tags:categories: ES6  事先给出一个以下方法要遍历的数组对象： 1234567const arr = [  &amp;#123;name:&amp;quot;黄药师&amp;quot;,alias:&amp;quot;东邪&amp;quot;,age:66&amp;#125;,  &amp;#123;name:&amp;quot;欧阳锋&amp;quot">
+<meta property="og:description" content="事先给出一个以下方法要遍历的数组对象： 1234567const arr = [  &amp;#123;name:&amp;quot;黄药师&amp;quot;,alias:&amp;quot;东邪&amp;quot;,age:66&amp;#125;,  &amp;#123;name:&amp;quot;欧阳锋&amp;quot;,alias:&amp;quot;西毒&amp;quot;,age:66&amp;#125;,  &amp;#123;name:&amp;quot;段皇爷&amp;quot;,alias">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;inkrhyme.com&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-10-31T03:03:39.687Z">
+<meta property="og:updated_time" content="2019-10-31T03:12:51.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;inkrhyme.com&#x2F;images&#x2F;og_image.png">
 
@@ -78,7 +78,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="arraySummary" height="28">
+                <img src="/images/logo.svg" alt="ES6常见数组处理方法分析汇总" height="28">
             
             </a>
         </div>
@@ -134,13 +134,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-31T02:59:34.074Z">2019-10-31</time>
+                <time class="level-item has-text-grey" datetime="2019-10-31T03:10:10.000Z">2019-10-31</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/ES6/">ES6</a>
+                </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    11 分钟 读完 (大约 1682 个字)
+                    11 分钟 读完 (大约 1664 个字)
                 </span>
                 
                 
@@ -149,14 +153,11 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                arraySummary
+                ES6常见数组处理方法分析汇总
             
         </h1>
         <div class="content">
-            <hr>
-<p>title: ES6常见数组处理方法分析汇总<br>date: 2019-10-31 10:59:34<br>tags:<br>categories: ES6</p>
-<hr>
-<p>事先给出一个以下方法要遍历的数组对象：</p>
+            <p>事先给出一个以下方法要遍历的数组对象：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const arr = [</span><br><span class="line">  &#123;name:&quot;黄药师&quot;,alias:&quot;东邪&quot;,age:66&#125;,</span><br><span class="line">  &#123;name:&quot;欧阳锋&quot;,alias:&quot;西毒&quot;,age:66&#125;,</span><br><span class="line">  &#123;name:&quot;段皇爷&quot;,alias:&quot;南帝&quot;,age:76&#125;,</span><br><span class="line">  &#123;name:&quot;洪七公&quot;,alias:&quot;北丐&quot;,age:72&#125;,</span><br><span class="line">  &#123;name:&quot;王重阳&quot;,alias:&quot;中神通&quot;,age:80&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
 
 <h2 id="一、遍历数组元素进行某种逻辑判断返回布尔值的数组方法"><a href="#一、遍历数组元素进行某种逻辑判断返回布尔值的数组方法" class="headerlink" title="一、遍历数组元素进行某种逻辑判断返回布尔值的数组方法"></a>一、遍历数组元素进行某种逻辑判断返回布尔值的数组方法</h2><h3 id="1、array-every"><a href="#1、array-every" class="headerlink" title="1、array.every()"></a>1、array.every()</h3><p>every方法用来检测数组中的每一项元素是否都通过了某一条件判断，通过则返回true，反之返回false</p>
@@ -335,7 +336,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        1
+                        2
                     </p>
                 </div>
             </div>
@@ -447,6 +448,14 @@
             </h3>
             <ul class="menu-list">
             <li>
+        <a class="level is-marginless" href="/categories/ES6/">
+            <span class="level-start">
+                <span class="level-item">ES6</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/%E9%97%B2%E6%95%A3%E5%B0%8F%E8%AE%B0/">
             <span class="level-start">
                 <span class="level-item">闲散小记</span>
@@ -473,18 +482,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/31/arraySummary/" class="media-left">
+            <a href="/2019/10/31/array-sum/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="arraySummary">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="ES6常见数组处理方法分析汇总">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-31T02:59:34.074Z">2019-10-31</time></div>
-                    <a href="/2019/10/31/arraySummary/" class="title has-link-black-ter is-size-6 has-text-weight-normal">arraySummary</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-31T03:10:10.000Z">2019-10-31</time></div>
+                    <a href="/2019/10/31/array-sum/" class="title has-link-black-ter is-size-6 has-text-weight-normal">ES6常见数组处理方法分析汇总</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/ES6/">ES6</a>
                     </p>
                 </div>
             </div>
@@ -587,18 +596,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/31/arraySummary/" class="media-left">
+            <a href="/2019/10/31/array-sum/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="arraySummary">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="ES6常见数组处理方法分析汇总">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-31T02:59:34.074Z">2019-10-31</time></div>
-                    <a href="/2019/10/31/arraySummary/" class="title has-link-black-ter is-size-6 has-text-weight-normal">arraySummary</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-31T03:10:10.000Z">2019-10-31</time></div>
+                    <a href="/2019/10/31/array-sum/" class="title has-link-black-ter is-size-6 has-text-weight-normal">ES6常见数组处理方法分析汇总</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/ES6/">ES6</a>
                     </p>
                 </div>
             </div>
@@ -694,7 +703,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="arraySummary" height="28">
+                    <img src="/images/logo.svg" alt="ES6常见数组处理方法分析汇总" height="28">
                 
                 </a>
                 <p class="is-size-7">
