@@ -7,15 +7,18 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>归档: 2019 - 墨韵</title>
+<title>深拷贝和浅拷贝 - 墨韵</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="墨韵">
-<meta property="og:url" content="http:&#x2F;&#x2F;inkrhyme.com&#x2F;archives&#x2F;2019&#x2F;index.html">
+    <meta name="description" content="在项目中初次碰到深拷贝和浅拷贝的问题场景是这样的：一个数据注册的信息初始化模板（注册字段比较多），在初始化页面是需要拷贝这个信息模板来初始化页面，本来复制一下是没什么的，但鉴于中间某些操作需要再次使用该信息模板，但因为之前拷贝后对部分值做了修改，导致原信息模板值也同时发生了改变，这才发现拷贝是存在深拷贝和浅拷贝的区别的。 深拷贝和浅拷贝的区别在哪里呢？在介绍深浅拷贝的区别之前，我们先讲解几个前置概">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深拷贝和浅拷贝">
+<meta property="og:url" content="http:&#x2F;&#x2F;inkrhyme.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;copy-sum&#x2F;index.html">
 <meta property="og:site_name" content="墨韵">
+<meta property="og:description" content="在项目中初次碰到深拷贝和浅拷贝的问题场景是这样的：一个数据注册的信息初始化模板（注册字段比较多），在初始化页面是需要拷贝这个信息模板来初始化页面，本来复制一下是没什么的，但鉴于中间某些操作需要再次使用该信息模板，但因为之前拷贝后对部分值做了修改，导致原信息模板值也同时发生了改变，这才发现拷贝是存在深拷贝和浅拷贝的区别的。 深拷贝和浅拷贝的区别在哪里呢？在介绍深浅拷贝的区别之前，我们先讲解几个前置概">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;inkrhyme.com&#x2F;images&#x2F;og_image.png">
+<meta property="og:updated_time" content="2019-10-31T03:28:32.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;inkrhyme.com&#x2F;images&#x2F;og_image.png">
 
@@ -75,7 +78,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="墨韵" height="28">
+                <img src="/images/logo.svg" alt="深拷贝和浅拷贝" height="28">
             
             </a>
         </div>
@@ -125,87 +128,128 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        2019
-        </h3>
-        <div class="timeline">
+<div class="card">
+    
+    <div class="card-content article ">
         
-            <article class="media">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-31T03:27:34.000Z">2019-10-31</time>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-10-31T03:27:34.000Z">2019-10-31</time>
-                        <a href="/2019/10/31/copy-sum/" class="title has-link-black-ter is-size-6 has-text-weight-normal">深拷贝和浅拷贝</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/%E5%8E%9F%E7%94%9FJS/">原生JS</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E5%8E%9F%E7%94%9FJS/">原生JS</a>
                 </div>
-            </article>
-        
-            <article class="media">
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-10-31T03:10:10.000Z">2019-10-31</time>
-                        <a href="/2019/10/31/array-sum/" class="title has-link-black-ter is-size-6 has-text-weight-normal">ES6常见数组处理方法分析汇总</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/ES6/">ES6</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-10-30T08:55:25.000Z">2019-10-30</time>
-                        <a href="/2019/10/30/test/" class="title has-link-black-ter is-size-6 has-text-weight-normal">我的第一篇测试博客</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/%E9%97%B2%E6%95%A3%E5%B0%8F%E8%AE%B0/">闲散小记</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
+                <span class="level-item has-text-grey">
+                    
+                    
+                    14 分钟 读完 (大约 2064 个字)
+                </span>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-10-29T07:27:54.218Z">2019-10-29</time>
-                        <a href="/2019/10/29/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
+                
+            </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                深拷贝和浅拷贝
+            
+        </h1>
+        <div class="content">
+            <p>在项目中初次碰到深拷贝和浅拷贝的问题场景是这样的：一个数据注册的信息初始化模板（注册字段比较多），在初始化页面是需要拷贝这个信息模板来初始化页面，本来复制一下是没什么的，但鉴于中间某些操作需要再次使用该信息模板，但因为之前拷贝后对部分值做了修改，导致原信息模板值也同时发生了改变，这才发现拷贝是存在深拷贝和浅拷贝的区别的。</p>
+<h2 id="深拷贝和浅拷贝的区别在哪里呢？"><a href="#深拷贝和浅拷贝的区别在哪里呢？" class="headerlink" title="深拷贝和浅拷贝的区别在哪里呢？"></a>深拷贝和浅拷贝的区别在哪里呢？</h2><p>在介绍深浅拷贝的区别之前，我们先讲解几个前置概念，方便我们更好的理解深浅拷贝的差异。</p>
+<h3 id="一、数据类型的分类"><a href="#一、数据类型的分类" class="headerlink" title="一、数据类型的分类"></a>一、数据类型的分类</h3><p>js的数据类型大体分为两类：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1、基础数据类型：Number,String,Undefined,Null,Boolean,Symbol。这些类型的数据可以直接操作保存在变量中的实际值。</span><br><span class="line">2、引用数据类型：Object，Array,Function，可以说除了基础数据类型之外的都属于引用数据类型。</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、栈和堆"><a href="#二、栈和堆" class="headerlink" title="二、栈和堆"></a>二、栈和堆</h3><p>栈会自动分配内存空间，且会自动释放，它的空间大小是固定的，一般用来存放基础数据类型，简单的数据段。</p>
+<p>堆是动态分配的内存空间，大小不固定且不会自动释放。一般用来存放引用数据类型。</p>
+<p>我们看下面的一个例子:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let a = [1, 2, 3, 4, 5]</span><br><span class="line">let b = a;</span><br><span class="line">let c = a[0];</span><br><span class="line">b[1] = 100;</span><br><span class="line">c = 20;</span><br><span class="line">console.log(a);  //[1,100,3,4,5]</span><br></pre></td></tr></table></figure>
+<p>结合上例打印结果可知：a是一个数组，属于引用数据类型，将其赋值给b，实际上是将其引用地址拷贝一份传给了b并存放到栈中，而真实的数组对象则是存放在堆中，系统通过引用地址（或者说指针）来快速查找保存到堆内存中的对象，所以修改数组b就等同于修原数组a。而c只是从a的堆内存中获取了几个基础类型数据拷贝给a,然后将该备份存放到栈内存中，此时该备份与原数据是相互独立的个体，修改c将直接修改栈内存中的值，与a无关。</p>
+<p>总的来说就是：简单数据类型直接储存在栈内存中，可以直接访问并对其进行修改；而引用数据类型则是存放在堆内存中，保存在栈内存中的变量其实是一个引用地址（或者说指针）,该指针指向堆内存中存放的对象数据，可以通过指针来查找保存在堆内存中的对象。而拷贝引用数据类型就是拷贝指针，因为拷贝后的指针指向的是同一个对象，所以修改任何一个变量都会修改堆内存中的对象。</p>
+<p>如果上述语言过于文字化，我们再举个例子：栈内存就好比一个书橱，每个格子里面存放一本书（也就是基础类型数据），我们要拷贝一份就好比重新印刷一本然后放到下一个空格子里面，二者相互独立，互不相干。堆内存就好比一个大仓库，这些仓库又分许多区，区的大小不一致，每个区都存放某一类书籍，数量不固定，种类不固定(好比引用数据类型的对象和或数组，大小不确定)。为了给对应的区进行分类，我们给每个区一个编号球，然后将编号球放在书橱里，想去查找仓库某个区的书籍时就通过编号快速查询。而拷贝引用数据类型，鉴于其占用内存的大小说不准，为了节约空间，我们就把其编号球复制一个，放到新的书格子里，这样因为他们对应共同的区编号，都可以找到并查看区里的书籍。这样是不是就很好理解了？</p>
+<p>讲了上面2个概念，我们再回头来看深拷贝和浅拷贝，就不会显得没有头绪了。</p>
+<p>所谓浅拷贝就是仅仅拷贝基本数据类型，而对于引用数据类型，因为拷贝的只是其引用地址，拷贝后的引用类型数据源发生改变，就意味着原数据源也同时发生了改变。</p>
+<p>而深拷贝就是拷贝之后相当于重新开辟出一个内存空间来存放复制的对象，二者相互独立，内容相同但各自占用一个独立内存空间。</p>
+<h2 id="常见的浅拷贝方法"><a href="#常见的浅拷贝方法" class="headerlink" title="常见的浅拷贝方法"></a>常见的浅拷贝方法</h2><h3 id="1、slice"><a href="#1、slice" class="headerlink" title="1、slice"></a>1、slice</h3><p>大家知道slice()方法可以用来操作一个数组从中截取一段数据形成一个新数组返回。如果不传值，则相当于复制了一个相同的数组并返回。如下所示：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let a = [1,2,3,4,5];</span><br><span class="line">let b = a.slice();</span><br><span class="line">b[0] = 100;</span><br><span class="line">console.log(a); //[1,2,3,4,5]</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、concat"><a href="#2、concat" class="headerlink" title="2、concat"></a>2、concat</h3><p>concat()也是数组的一个处理方法，用于将两个或多个数组拼接为一个新的数组并返回，而不会改变原数组。如下所示：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let a = [1,2,3,4,5];</span><br><span class="line">let b = a.concat();</span><br><span class="line">b[0] = 100;</span><br><span class="line">console.log(a); //[1,2,3,4,5]</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、遍历数组的各项元素，组成一个新数组，这个就不做详述。"><a href="#3、遍历数组的各项元素，组成一个新数组，这个就不做详述。" class="headerlink" title="3、遍历数组的各项元素，组成一个新数组，这个就不做详述。"></a>3、遍历数组的各项元素，组成一个新数组，这个就不做详述。</h3><p>备注：以上方法都是数组的拷贝，下面2个是对象的拷贝。</p>
+<h3 id="4、Object-assign"><a href="#4、Object-assign" class="headerlink" title="4、Object.assign()"></a>4、Object.assign()</h3><p>Object.assign()方法用于合并对象，即将所有可枚举属性的值从一个或多个源对象复制到目标对象，最终返回目标对象。</p>
+<p>如果源对象中有和目标对象同名的属性，则后者会覆盖前者，例如：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const o1 = &#123; a: 1, b: 1, c: 1 &#125;;</span><br><span class="line">const o2 = &#123; b: 2, c: 2 &#125;;</span><br><span class="line">const o3 = &#123; c: 3 &#125;;</span><br><span class="line"></span><br><span class="line">const obj = Object.assign(&#123;&#125;, o1, o2, o3);</span><br><span class="line">console.log(obj); // &#123; a: 1, b: 2, c: 3 &#125;</span><br></pre></td></tr></table></figure>
+
+<p>但鉴于Object.assign()拷贝时拷贝的是属性值，假如源对象的属性值是一个对象的引用，那么它只能指向那个引用。所以它不能实现深拷贝。</p>
+<h3 id="5、扩展运算符"><a href="#5、扩展运算符" class="headerlink" title="5、扩展运算符"></a>5、扩展运算符</h3><p>扩展运算符可以在函数调用和数组构造时，将数组表达式和string在语法层面上展开，或将对象以key-value的形式展开来。</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//示例一</span><br><span class="line">let a = [1,2,3];</span><br><span class="line">function add(x,y,z)&#123;</span><br><span class="line">  return x+y+z</span><br><span class="line">&#125;</span><br><span class="line">console.log(add(...a)); //6</span><br><span class="line"></span><br><span class="line">//示例二</span><br><span class="line">let c = [...a];  //也可以实现数组的复制</span><br><span class="line">let d = &#123;...&#123;a:1,b:2&#125;&#125;  //可以实现对象的复制</span><br></pre></td></tr></table></figure>
+<p>但如果上述数组和对象中的属性包含其他数组或对象时，这时候复制的依旧是其对应引用地址，所以也无法实现深拷贝。</p>
+<h2 id="如何实现深拷贝？"><a href="#如何实现深拷贝？" class="headerlink" title="如何实现深拷贝？"></a>如何实现深拷贝？</h2><p>1、最通用的方法就是下面这种：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSON.parse(JSON.stringify(obj))</span><br></pre></td></tr></table></figure>
+<p>该方法可以轻松的实现深拷贝。<br>2、鉴于上面列举的方法无法实现深拷贝的原因是对于引用类型的数据无法直接拷贝值而是拷贝其引用地址，那么我们对每个引用类型的数据做层层循环遍历处理，也可以达到深拷贝的目的，以下是网上提供的方法：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function copy (obj) &#123;</span><br><span class="line">    var newobj = obj.constructor === Array ? [] : &#123;&#125;;</span><br><span class="line">    if(typeof obj !== &apos;object&apos;)&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    for(var i in obj)&#123;</span><br><span class="line">        newobj[i] = typeof obj[i] === &apos;object&apos; ?</span><br><span class="line">        copy(obj[i]) : obj[i];</span><br><span class="line">    &#125;</span><br><span class="line">    return newobj</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后我们要知道：深拷贝实际上是很耗性能的，因为它将会把原对象的内容进行复制然后开辟出一块全新的内存空间来进行存放，这样如果对象数据量大而拷贝次数过多，对性能就会产生影响。</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/31/array-sum/">
+                <span class="level-item">ES6常见数组处理方法分析汇总</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
     </div>
 </div>
 
@@ -677,7 +721,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="墨韵" height="28">
+                    <img src="/images/logo.svg" alt="深拷贝和浅拷贝" height="28">
                 
                 </a>
                 <p class="is-size-7">
