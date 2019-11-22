@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    11 分钟 读完 (大约 1664 个字)
+                    11 分钟 读完 (大约 1665 个字)
                 </span>
                 
                 
@@ -168,71 +168,16 @@
         <div class="content">
             <p>事先给出一个以下方法要遍历的数组对象：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const arr = [</span><br><span class="line">  &#123;name:&quot;黄药师&quot;,alias:&quot;东邪&quot;,age:66&#125;,</span><br><span class="line">  &#123;name:&quot;欧阳锋&quot;,alias:&quot;西毒&quot;,age:66&#125;,</span><br><span class="line">  &#123;name:&quot;段皇爷&quot;,alias:&quot;南帝&quot;,age:76&#125;,</span><br><span class="line">  &#123;name:&quot;洪七公&quot;,alias:&quot;北丐&quot;,age:72&#125;,</span><br><span class="line">  &#123;name:&quot;王重阳&quot;,alias:&quot;中神通&quot;,age:80&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
-
-<h2 id="一、遍历数组元素进行某种逻辑判断返回布尔值的数组方法"><a href="#一、遍历数组元素进行某种逻辑判断返回布尔值的数组方法" class="headerlink" title="一、遍历数组元素进行某种逻辑判断返回布尔值的数组方法"></a>一、遍历数组元素进行某种逻辑判断返回布尔值的数组方法</h2><h3 id="1、array-every"><a href="#1、array-every" class="headerlink" title="1、array.every()"></a>1、array.every()</h3><p>every方法用来检测数组中的每一项元素是否都通过了某一条件判断，通过则返回true，反之返回false</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const flag = arr.every(item =&gt; &#123;</span><br><span class="line">  return item.age === 66</span><br><span class="line">&#125;)</span><br><span class="line">console.log(flag)    //false</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、array-some"><a href="#2、array-some" class="headerlink" title="2、array.some()"></a>2、array.some()</h3><p>some方法用来检测数组中是否存在至少一项元素满足某一条件判断，存在则返回true，反之则返回false</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const flag = arr.some(item =&gt; &#123;</span><br><span class="line">  return item.alias === &quot;北丐&quot;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(flag)    //true</span><br></pre></td></tr></table></figure>
-
-<h3 id="3、array-includes-element-fromIndex"><a href="#3、array-includes-element-fromIndex" class="headerlink" title="3、array.includes(element,fromIndex)"></a>3、array.includes(element,fromIndex)</h3><p>includes方法用来判断数组内是否包含某一个指定值，且可以指定从数组某一个索引值开始检索。其中element是要检索的元素，fromIndex是开始检索的索引值。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const flag = [1,2,3,5].includes(5,2);</span><br><span class="line">console.log(flag)    //true</span><br></pre></td></tr></table></figure>
-
-<h2 id="二、遍历数组元素并返回一个新数组"><a href="#二、遍历数组元素并返回一个新数组" class="headerlink" title="二、遍历数组元素并返回一个新数组"></a>二、遍历数组元素并返回一个新数组</h2><h3 id="4、array-map"><a href="#4、array-map" class="headerlink" title="4、array.map()"></a>4、array.map()</h3><p>map方法用来遍历数组中的每一个元素，然后对其做同一处理，返回新的元素最终组合成一个新数组返回。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const arr1 = arr.map(item =&gt; &#123;</span><br><span class="line">  return &#123;alias: `五绝之$&#123;item.alias&#125;`&#125;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(arr1)  </span><br><span class="line">/* [&#123;alias:&quot;五绝之东邪&quot;&#125;,&#123;alias:&quot;五绝之西毒&quot;&#125;,&#123;alias:&quot;五绝之南帝&quot;&#125;,&#123;alias:&quot;五绝之北丐&quot;&#125;,&#123;alias:&quot;五绝之中神通&quot;&#125;] */</span><br></pre></td></tr></table></figure>
-
-<h3 id="5、array-filter"><a href="#5、array-filter" class="headerlink" title="5、array.filter()"></a>5、array.filter()</h3><p>filter方法用来遍历数组中的每一项元素，然后执行同一判断条件的检测后过滤出满足条件的元素值最终组合成新的数组返回。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const arr1 = arr.filter(item =&gt; &#123;</span><br><span class="line">  return item.name === &quot;洪七公&quot;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(arr1); //[&#123;name:&quot;洪七公&quot;,alias:&quot;北丐&quot;,age:72&#125;]</span><br></pre></td></tr></table></figure>
-
-<h2 id="三、数组处理的增删改查"><a href="#三、数组处理的增删改查" class="headerlink" title="三、数组处理的增删改查"></a>三、数组处理的增删改查</h2><h3 id="6、array-pop-和array-shift"><a href="#6、array-pop-和array-shift" class="headerlink" title="6、array.pop()和array.shift()"></a>6、array.pop()和array.shift()</h3><p>pop方法用来删除数组的最后一个元素，并返回最后一个元素的值。备注：数组为空时则返回undefined</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const newArr = [1,2,3,4,5];</span><br><span class="line">const val = newArr.pop();</span><br><span class="line">console.log(newArr);  //[1,2,3,4]</span><br><span class="line">console.log(val);    //5</span><br></pre></td></tr></table></figure>
-
-<p>shift方法用来删除数组的第一个元素，并返回第一个元素的值。备注：数组为空时则返回undefined</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const newArr = [1,2,3,4,5];</span><br><span class="line">const val = newArr.shift();</span><br><span class="line">console.log(newArr);  //[2,3,4,5]</span><br><span class="line">console.log(val);    //1</span><br></pre></td></tr></table></figure>
-
-<h3 id="7、array-push-element1-element2-…-elementN-和array-unshift-element1-element2-…-elementN"><a href="#7、array-push-element1-element2-…-elementN-和array-unshift-element1-element2-…-elementN" class="headerlink" title="7、array.push(element1,element2,…,elementN)和array.unshift(element1,element2,…,elementN)"></a>7、array.push(element1,element2,…,elementN)和array.unshift(element1,element2,…,elementN)</h3><p>push方法用来将一个或多个元素依次添加到数组的末尾，并返回新数组的长度。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1,2,3,4];</span><br><span class="line">const len = arr5.unshift(9,8);</span><br><span class="line">console.log(arr)  //[9,8,1,2,3,4]</span><br><span class="line">console.log(len)  //6</span><br></pre></td></tr></table></figure>
-<p>unshift方法用来将一个或多个元素依次添加到数组的开头，并返回新数组的长度。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1,2,3,4];</span><br><span class="line">const len = arr5.unshift(9,8);</span><br><span class="line">console.log(arr)  //[1,2,3,4,9,8]</span><br><span class="line">console.log(len)  //6</span><br></pre></td></tr></table></figure>
-
-<h3 id="8、array-splice-startIndex-deleteItemNum-item1-item2-…-itemN"><a href="#8、array-splice-startIndex-deleteItemNum-item1-item2-…-itemN" class="headerlink" title="8、array.splice(startIndex,deleteItemNum,item1,item2,…,itemN)"></a>8、array.splice(startIndex,deleteItemNum,item1,item2,…,itemN)</h3><p>splice方法可以实现对数组进行增删的操作并返回被删除的项所组成的数组，其中startIndex（必需）是规定要添加/删除元素的位置，若未负数则从末尾处开始；deleteItemNum是要删除的元素个数，若为0则不删除；itemN(非必需)为要新增的元素，插入位置即startIndex位置。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const arr6 = [1,2,3,4,5,6,7];</span><br><span class="line">const result = arr6.splice(2,2,&quot;a&quot;,&quot;b&quot;);</span><br><span class="line">console.log(arr6);     //[1,2,&quot;a&quot;,&quot;b&quot;,5,6,7]</span><br><span class="line">console.log(result);   //[3,4]</span><br><span class="line">const result1 = arr6.splice(-2,1,&quot;c&quot;);</span><br><span class="line">console.log(arr6);     //[1,2,&quot;a&quot;,&quot;b&quot;,5,&quot;c&quot;,7]</span><br><span class="line">console.log(result1);  //[6]</span><br></pre></td></tr></table></figure>
-
-<h3 id="9、array-indexOf-element-fromIndex-和array-findIndex"><a href="#9、array-indexOf-element-fromIndex-和array-findIndex" class="headerlink" title="9、array.indexOf(element,fromIndex)和array.findIndex()"></a>9、array.indexOf(element,fromIndex)和array.findIndex()</h3><p>indexOf方法可以返回数组中匹配到的给定元素的第一个索引值，若不存在则返回-1。其中element是要匹配的指定元素，fromIndex为开始执行匹配检索的索引位置。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const idx = [1,2,3,4,5].indexOf(6);</span><br><span class="line">const idx1 = arr.indexOf(&#123;name:&quot;洪七公&quot;,alias:&quot;北丐&quot;,age:72&#125;</span><br><span class="line">)</span><br><span class="line">console.log(idx);   //-1</span><br><span class="line">console.log(idx1);   //-1   我们发现对于复杂的对象数组，indexOf是无法进行索引位置查找的</span><br></pre></td></tr></table></figure>
-
-<p>findIndex方法与indexOf方法的作用类似，但更高级，一般用来处理一些复杂的对象数组，查找到则返回第一个匹配元素的索引，反之则返回-1.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const idx = arr.findIndex(item =&gt; &#123;</span><br><span class="line">  return item.name === &quot;洪七公&quot;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(idx)   //3</span><br></pre></td></tr></table></figure>
-<h2 id="数组的其他处理方法"><a href="#数组的其他处理方法" class="headerlink" title="数组的其他处理方法"></a>数组的其他处理方法</h2><h3 id="10、array-reverse"><a href="#10、array-reverse" class="headerlink" title="10、array.reverse()"></a>10、array.reverse()</h3><p>reverse方法用来翻转原数组的先后顺序</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1,2,3,4,5];</span><br><span class="line">arr.reverse();</span><br><span class="line">console.log(arr)  //[5,4,3,2,1]</span><br></pre></td></tr></table></figure>
-
-<h3 id="11、array-join"><a href="#11、array-join" class="headerlink" title="11、array.join()"></a>11、array.join()</h3><p>join方法用来将数组中的各项元素用某一指定的字符串进行拼接，返回一个新的字符串。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cosnt arr = [1992,01,12];</span><br><span class="line">arr.join(&quot;-&quot;);</span><br><span class="line">console.log(arr)   //&quot;1992-01-12&quot;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="12、array-concat-arr1-arr2-…-arrN"><a href="#12、array-concat-arr1-arr2-…-arrN" class="headerlink" title="12、array.concat(arr1,arr2,…,arrN)"></a>12、array.concat(arr1,arr2,…,arrN)</h3><p>concat为数组拼接方法，可将多个数组进行拼接，最终返回一个新数组，原数组没有改变。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1,2];</span><br><span class="line">const newArr = arr.concat([&quot;a&quot;,&quot;b&quot;],[9,8]);</span><br><span class="line">console.log(newArr);    //[1,2,&quot;a&quot;,&quot;b&quot;,9,8]</span><br><span class="line">console.log(arr);       //[1,2]</span><br></pre></td></tr></table></figure>
-
-<h3 id="13、array-sort-copareFunction"><a href="#13、array-sort-copareFunction" class="headerlink" title="13、array.sort([copareFunction])"></a>13、array.sort([copareFunction])</h3><p>sort方法可以对数组按某一指定比较规则进行排序。如果不传参数则按照字符编码的顺序进行排序</p>
-<h3 id="14、array-reduce-function-prev-cur-indedx-arr-initialValue"><a href="#14、array-reduce-function-prev-cur-indedx-arr-initialValue" class="headerlink" title="14、array.reduce(function(prev,cur,indedx,arr),initialValue)"></a>14、array.reduce(function(prev,cur,indedx,arr),initialValue)</h3><p>reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。一般来说空数组是不会进行回调的，用空数组执行reduce方法时会报错，但如果设置了初始值则可以避免，但一般也不推荐(因为没有意义)。</p>
-<p>initialValue是可自定义的初始值，如果设置了则以其作为初始值（此时起始所以为0），如果不设置则以数组的第一个元素作为初始值（此时起始索引为1）。如下面的2个累加计算示例可看出来</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1,2,3,4]</span><br><span class="line">const val = arr.reduce((prev,cur,index,arr) =&gt; &#123;</span><br><span class="line">  console.log(index)  //依次为1,2,3</span><br><span class="line">  return prev + cur;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(val)  //10</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1,2,3,4]</span><br><span class="line">const val = arr.reduce((prev,cur,index,arr) =&gt; &#123;</span><br><span class="line">  console.log(index)  //依次为0,1,2,3</span><br><span class="line">  return prev + cur;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(val)  //10</span><br></pre></td></tr></table></figure>
-
-<p>reduce方法可以说是一个高级方法，因为他的可自定义的累加器函数，可以处理很多比较高级的操作，常见的有：</p>
-<h4 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,3,1,2]</span><br><span class="line">let newArr = arr.reduce((pre,cur)=&gt;&#123;</span><br><span class="line">    if(!pre.includes(cur))&#123;</span><br><span class="line">      return pre.concat(cur)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      return pre</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,[])</span><br><span class="line">console.log(newArr);// [1, 2, 3]</span><br></pre></td></tr></table></figure>
-
-<h4 id="计算数组中各元素出现的次数"><a href="#计算数组中各元素出现的次数" class="headerlink" title="计算数组中各元素出现的次数"></a>计算数组中各元素出现的次数</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let characters = [&apos;a&apos;, &apos;b&apos;, &apos;t&apos;, &apos;t&apos;, &apos;a&apos;,&apos;f&apos;];</span><br><span class="line"></span><br><span class="line">let arr = characters.reduce((pre,cur)=&gt;&#123;</span><br><span class="line">  if(cur in pre)&#123;</span><br><span class="line">    pre[cur]++</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    pre[cur] = 1 </span><br><span class="line">  &#125;</span><br><span class="line">  return pre</span><br><span class="line">&#125;,&#123;&#125;)</span><br><span class="line">console.log(arr); //&#123;a: 2, b: 1, t: 2, f: 1&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="对象数组中的单个属性累加"><a href="#对象数组中的单个属性累加" class="headerlink" title="对象数组中的单个属性累加"></a>对象数组中的单个属性累加</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const achievement = [</span><br><span class="line">  &#123;year:&apos;2016年&apos;,number: 231200&#125;,</span><br><span class="line">  &#123;year:&apos;2017年&apos;,number: 201900&#125;,</span><br><span class="line">  &#123;year:&apos;2018年&apos;,number: 275678&#125;,</span><br><span class="line">  &#123;year:&apos;2019年&apos;,number: 301200&#125;</span><br><span class="line">];</span><br><span class="line">const sum = achievement.reduce((prev,cur) =&gt; &#123;</span><br><span class="line">  return prev + cur.number</span><br><span class="line">&#125;,0)</span><br><span class="line">console.log(sum)  //1009978</span><br></pre></td></tr></table></figure>
-
-<h4 id="将二维数组转化为一维数组"><a href="#将二维数组转化为一维数组" class="headerlink" title="将二维数组转化为一维数组"></a>将二维数组转化为一维数组</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let arr = [[0, 1], [2, 3], [4, 5]]</span><br><span class="line">let newArr = arr.reduce((pre,cur)=&gt;&#123;</span><br><span class="line">    return pre.concat(cur)</span><br><span class="line">&#125;,[])</span><br><span class="line">console.log(newArr); // [0, 1, 2, 3, 4, 5]</span><br></pre></td></tr></table></figure>
-
-<h4 id="将多维数组转化为一维数组"><a href="#将多维数组转化为一维数组" class="headerlink" title="将多维数组转化为一维数组"></a>将多维数组转化为一维数组</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let arr = [[0, 1], [2, 3], [4,[5,6,7]]]</span><br><span class="line">const newArr = function(arr)&#123;</span><br><span class="line">   return arr.reduce((pre,cur)=&gt;pre.concat(Array.isArray(cur)?newArr(cur):cur),[])</span><br><span class="line">&#125;</span><br><span class="line">console.log(newArr(arr)); //[0, 1, 2, 3, 4, 5, 6, 7]</span><br></pre></td></tr></table></figure>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/31/array-sum/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -309,7 +254,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        0
+                        2
                     </p>
                 </div>
             </div>
@@ -448,7 +393,14 @@
     </div>
 </div>
     
-        
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 10px;">数组</a>
+    </div>
+</div>
     
     
         <div class="column-right-shadow is-hidden-widescreen ">
@@ -569,6 +521,20 @@
                 标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ES6/">
+                        <span class="tag">ES6</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%95%B0%E7%BB%84/">
+                        <span class="tag">数组</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
             </div>
         </div>
@@ -702,6 +668,20 @@
                 标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ES6/">
+                        <span class="tag">ES6</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%95%B0%E7%BB%84/">
+                        <span class="tag">数组</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
             </div>
         </div>
