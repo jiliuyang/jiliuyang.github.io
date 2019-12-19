@@ -18,7 +18,7 @@
 <meta property="og:description" content="前序当前项目开发工作的主流方式是前后端分离，这样在某种程度上可以使前后端各司其职，提高效率。但在项目起步阶段，后端接口尚未提供，而前端在先行开发界面时很多时候需要模拟一些假数据以便于展示，走通流程。我想大部分前端都尝试过先配置一个json文件，填充一些假数据进去来调用模拟后台返回数据。当然，这种造数据的方式是很枯燥的，数据也不够灵活。现在我们有了更好的选择，就是mockjs. mockjs最好用的">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;inkrhyme.com&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-10-31T06:26:27.756Z">
+<meta property="og:updated_time" content="2019-11-22T05:22:22.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;inkrhyme.com&#x2F;images&#x2F;og_image.png">
 
@@ -144,7 +144,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    14 分钟 读完 (大约 2145 个字)
+                    14 分钟 读完 (大约 2146 个字)
                 </span>
                 
                 
@@ -161,6 +161,7 @@
 <p>mockjs最好用的地方就在于它能够拦截ajax请求，并能更加方便的为你动态模拟假数据。</p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>vue-cli项目搭建完成后，需先行安装axios和mockjs</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install axios --save</span><br><span class="line">npm install mockjs --save-dev</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>在项目目录中新增mock/index.js路径文件，用以配置mock模拟数据的格式等,接下来先示范一下基础用法：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import Mock from &quot;mockjs&quot;;</span><br><span class="line">const Random = Mock.Random;  //Mock.Random是一个工具类，用于产生各种随机数据</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const usualTemplate = &#123;</span><br><span class="line">  status: 200,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &quot;基础信息模板展示&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Mock.setup(&#123;</span><br><span class="line">  timeout: &apos;500&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Mock.mock(&apos;/user/list&apos;, usualTemplate);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export default Mock;</span><br></pre></td></tr></table></figure>
 <p>然后在main.js文件中引入mockjs</p>
@@ -235,6 +236,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/11/22/fllow-heart/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">周末漫语</span>
+            </a>
+        </div>
+        
         
         <div class="level-end">
             <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/31/copy-sum/">
@@ -291,7 +299,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
@@ -311,7 +319,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        2
+                        3
                     </p>
                 </div>
             </div>
@@ -337,27 +345,6 @@
                 title="Facebook" href="https://facebook.com">
                 
                 <i class="fab fa-facebook"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Twitter" href="https://twitter.com">
-                
-                <i class="fab fa-twitter"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Dribbble" href="https://dribbble.com">
-                
-                <i class="fab fa-dribbble"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="RSS" href="/">
-                
-                <i class="fas fa-rss"></i>
                 
             </a>
             
@@ -455,7 +442,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 10px;">数组</a>
+        <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 10px;">数组</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
     </div>
 </div>
     
@@ -467,6 +454,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/11/22/fllow-heart/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="周末漫语">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-22T07:16:31.000Z">2019-11-22</time></div>
+                    <a href="/2019/11/22/fllow-heart/" class="title has-link-black-ter is-size-6 has-text-weight-normal">周末漫语</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -556,6 +562,17 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/10/">
                 <span class="level-start">
                     <span class="level-item">十月 2019</span>
@@ -589,6 +606,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E6%95%B0%E7%BB%84/">
                         <span class="tag">数组</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%9A%8F%E7%AC%94/">
+                        <span class="tag">随笔</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -617,6 +641,25 @@
         
         <article class="media">
             
+            <a href="/2019/11/22/fllow-heart/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="周末漫语">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-22T07:16:31.000Z">2019-11-22</time></div>
+                    <a href="/2019/11/22/fllow-heart/" class="title has-link-black-ter is-size-6 has-text-weight-normal">周末漫语</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/10/31/mock-sum/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="vue-cli项目中mockjs使用说明">
@@ -703,6 +746,17 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/10/">
                 <span class="level-start">
                     <span class="level-item">十月 2019</span>
@@ -736,6 +790,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%E6%95%B0%E7%BB%84/">
                         <span class="tag">数组</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E9%9A%8F%E7%AC%94/">
+                        <span class="tag">随笔</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
